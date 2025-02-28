@@ -66,6 +66,7 @@ export const useSearchStore = defineStore('search', {
         });
 
         this.searchId = response.data.search_id;
+        this.restaurants = [];
       } catch (err) {
         console.log(err);
         this.error = 'Failed to create search token.';
@@ -95,15 +96,17 @@ export const useSearchStore = defineStore('search', {
           },
         );
 
-        this.restaurants = response.data.posts.map((post: SearchResponsePost) => ({
-          name: post.post.venue_name,
-          slug: post.post.slug,
-          score: post.post.score,
-          recommended: post.availability.recommended.map((rec) => ({
-            text: rec.text,
-            time: rec.time,
+        this.restaurants.push(
+          ...response.data.posts.map((post: SearchResponsePost) => ({
+            name: post.post.venue_name,
+            slug: post.post.slug,
+            score: post.post.score,
+            recommended: post.availability.recommended.map((rec) => ({
+              text: rec.text,
+              time: rec.time,
+            })),
           })),
-        }));
+        );
 
         console.log(this.restaurants);
         this.total = response.data.total;
