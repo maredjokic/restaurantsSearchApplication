@@ -1,42 +1,8 @@
 import { defineStore } from 'pinia';
 import api from '@/api/axiosInstance';
 import { useAuthStore } from '@/stores/authStore';
-
-interface SearchState {
-  searchId: string | null;
-  restaurants: Restaurant[];
-  total: number;
-  loading: boolean;
-  error: string | null;
-}
-
-export interface Recommended {
-  text: string;
-  time: string;
-}
-
-export interface Restaurant {
-  name: string;
-  slug: string;
-  score: number;
-  recommended: Recommended[];
-}
-
-export interface SearchResponsePost {
-  post: {
-    venue_name: string;
-    slug: string;
-    score: number;
-  };
-  availability: {
-    recommended: { text: string; time: string }[];
-  };
-}
-
-export interface SearchResponse {
-  posts: SearchResponsePost[];
-  total: number;
-}
+import type { SearchState } from '@/types/searchState';
+import type { SearchResponsePost } from '@/types/searchResponse';
 
 export const useSearchStore = defineStore('search', {
   state: (): SearchState => ({

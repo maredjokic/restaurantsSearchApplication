@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia';
 import axios from 'axios';
+import { API_BASE_URL } from '@/config/constants';
 
 interface AuthState {
   token: string | null;
@@ -21,7 +22,7 @@ export const useAuthStore = defineStore('auth', {
       this.loading = true;
       this.error = null;
       try {
-        const response = await axios.post('https://site.ontopo.work/api/loginAnonymously');
+        const response = await axios.post(API_BASE_URL + '/loginAnonymously');
 
         this.token = response.data.jwt_token;
         this.refreshToken = response.data.refresh_token;

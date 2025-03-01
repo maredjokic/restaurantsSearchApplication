@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 import { useSearchStore } from "@/stores/searchStore";
-import SearchForm from '@/components/SearchForm.vue';
-import RestaurantList from "@/components/RestaurantList.vue";
+import SearchForm from '@/components/Search/SearchForm.vue';
+import RestaurantList from "@/components/Restaurant/RestaurantList.vue";
 
 const searchStore = useSearchStore();
 
