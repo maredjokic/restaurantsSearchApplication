@@ -1,9 +1,7 @@
 <script setup lang="ts">
-const dateOptions = Array.from({ length: 7 }, (_, i) => {
-  const date = new Date();
-  date.setDate(date.getDate() + i);
-  return date.toISOString().split('T')[0];
-});
+import { useDateOptions } from '@/composables/useDateOptions';
+
+const { dateOptions } = useDateOptions();
 const selectedDate = defineModel<string | null>();
 </script>
 

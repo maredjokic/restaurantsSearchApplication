@@ -1,26 +1,41 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import { useSearchStore } from "@/stores/searchStore";
 import RestaurantCard from "@/components/Restaurant/RestaurantCard.vue";
 import ProgressBar from "@/components/Loader/ProgressBar.vue";
 
 const searchStore = useSearchStore();
+
+const isInitialLoading = computed(() => searchStore.loading && searchStore.restaurants.length === 0);
+const isFetchingMore = computed(() => searchStore.loading && searchStore.restaurants.length > 0);
+const isError = computed(() => searchStore.error);
+const noResults = computed(() => !searchStore.loading && searchStore.restaurants.length === 0 && searchStore.searchId !== null);
+const isInitialState = computed(() => searchStore.searchId === null && searchStore.restaurants.length === 0);
 </script>
 
 <template>
   <div class="search-results">
-    <ProgressBar v-if="searchStore.loading && searchStore.restaurants.length === 0" />
-    <div v-if="searchStore.loading && searchStore.restaurants.length === 0">Loading...</div>
-    <div v-else-if="searchStore.error">{{ searchStore.error }}</div>
-    <div v-else-if="searchStore.restaurants.length === 0">No restaurants found.</div>
+    <div v-if="isInitialLoading">
+      <ProgressBar />
+      <p>Loading...</p>
+    </div>
+
+    <div v-else-if="isError">{{ searchStore.error }}</div>
+
+    <div v-else-if="noResults">No restaurants found.</div>
+
+    <div v-else-if="isInitialState">Start your search to see results!</div>
 
     <div v-else class="restaurant-list">
       <RestaurantCard v-for="restaurant in searchStore.restaurants" :key="restaurant.slug" :restaurant="restaurant" />
     </div>
-    <ProgressBar v-if="searchStore.loading && searchStore.restaurants.length > 0" />
-    <div v-if="searchStore.loading && searchStore.restaurants.length > 0">Loading...</div>
+
+    <div v-show="isFetchingMore">
+      <ProgressBar />
+      <p>Loading more...</p>
+    </div>
   </div>
 </template>
-
 
 <style scoped>
 .search-results {
@@ -38,7 +53,7 @@ const searchStore = useSearchStore();
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 15px 15px;
+  gap: 15px;
   margin-bottom: 10px;
 }
 </style>

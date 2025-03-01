@@ -14,9 +14,7 @@ const selectedDate = ref<string | null>(null);
 const selectedTime = ref<string | null>(null);
 
 const handleSearch = async () => {
-  if (selectedDate.value && selectedTime.value && selectedSize.value) {
-    searchRestaurants(selectedDate.value, selectedTime.value, selectedSize.value);
-  }
+  searchRestaurants(selectedDate.value, selectedTime.value, selectedSize.value);
 };
 </script>
 

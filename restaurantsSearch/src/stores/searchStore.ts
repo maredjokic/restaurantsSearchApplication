@@ -33,8 +33,8 @@ export const useSearchStore = defineStore('search', {
         this.searchId = response.data.search_id;
         this.restaurants = [];
       } catch (err) {
-        console.log(err);
         this.error = 'Failed to create search token.';
+        throw err;
       } finally {
         this.loading = false;
       }
@@ -75,8 +75,8 @@ export const useSearchStore = defineStore('search', {
 
         this.total = response.data.total;
       } catch (err) {
-        console.log(err);
         this.error = 'Failed to fetch restaurants.';
+        throw err;
       } finally {
         this.loading = false;
       }

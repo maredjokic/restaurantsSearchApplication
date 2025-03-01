@@ -1,13 +1,7 @@
 import { defineStore } from 'pinia';
 import axios from 'axios';
 import { API_BASE_URL } from '@/config/constants';
-
-interface AuthState {
-  token: string | null;
-  refreshToken: string | null;
-  loading: boolean;
-  error: string | null;
-}
+import type { AuthState } from '@/types/authState';
 
 export const useAuthStore = defineStore('auth', {
   state: (): AuthState => ({
@@ -27,8 +21,8 @@ export const useAuthStore = defineStore('auth', {
         this.token = response.data.jwt_token;
         this.refreshToken = response.data.refresh_token;
       } catch (err) {
-        console.log(err);
         this.error = 'Failed to log in.';
+        throw err;
       } finally {
         this.loading = false;
       }
