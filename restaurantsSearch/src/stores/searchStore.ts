@@ -51,8 +51,7 @@ export const useSearchStore = defineStore('search', {
     async createSearchToken(date: string, time: string, size: string) {
       this.loading = true;
       this.error = null;
-      const authStore = useAuthStore();
-      console.log(authStore.token);
+
       try {
         const response = await api.post('search_token', {
           criteria: {
@@ -108,7 +107,6 @@ export const useSearchStore = defineStore('search', {
           })),
         );
 
-        console.log(this.restaurants);
         this.total = response.data.total;
       } catch (err) {
         console.log(err);

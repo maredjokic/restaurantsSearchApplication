@@ -22,16 +22,14 @@ const searchStore = useSearchStore();
         </div>
       </div>
     </div>
-
-    <button v-if="searchStore.restaurants.length < searchStore.total" @click="searchStore.fetchRestaurants()">
-      Load More
-    </button>
+    <div v-if="searchStore.loading && searchStore.restaurants.length > 0">Loading...</div>
   </div>
 </template>
 
 
 <style scoped>
 .search-results {
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,12 +43,13 @@ const searchStore = useSearchStore();
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 15px 15px;
 }
 
 .restaurant-card {
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 1px 2px 8px rgba(0, 0, 0, 05);
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   width: 500px;
   transition: transform 0.2s;
@@ -71,7 +70,7 @@ const searchStore = useSearchStore();
 }
 
 .restaurant-name {
-  font-size: 1.5em;
+  font-size: 2em;
   margin-bottom: 10px;
 }
 
@@ -86,5 +85,11 @@ const searchStore = useSearchStore();
   border-radius: 4px;
   padding: 5px;
   margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+  .restaurant-card {
+    width: 100%;
+  }
 }
 </style>
