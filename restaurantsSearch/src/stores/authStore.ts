@@ -28,4 +28,5 @@ export const useAuthStore = defineStore('auth', {
       }
     },
   },
+  // TODO: Refresh token action
 });

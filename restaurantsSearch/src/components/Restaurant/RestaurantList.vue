@@ -10,17 +10,12 @@ const isInitialLoading = computed(() => searchStore.loading && searchStore.resta
 const isFetchingMore = computed(() => searchStore.loading && searchStore.restaurants.length > 0);
 const isError = computed(() => searchStore.error);
 const noResults = computed(() => !searchStore.loading && searchStore.restaurants.length === 0 && searchStore.searchId !== null);
-const isInitialState = computed(() => searchStore.searchId === null && searchStore.restaurants.length === 0);
+const isInitialState = computed(() => searchStore.searchId === null && searchStore.restaurants.length === 0 && !searchStore.loading);
 </script>
 
 <template>
   <div class="search-results">
-    <div v-if="isInitialLoading">
-      <ProgressBar />
-      <p>Loading...</p>
-    </div>
-
-    <div v-else-if="isError">{{ searchStore.error }}</div>
+    <div v-if="isError">{{ searchStore.error }}</div>
 
     <div v-else-if="noResults">No restaurants found.</div>
 
@@ -30,10 +25,11 @@ const isInitialState = computed(() => searchStore.searchId === null && searchSto
       <RestaurantCard v-for="restaurant in searchStore.restaurants" :key="restaurant.slug" :restaurant="restaurant" />
     </div>
 
-    <div v-show="isFetchingMore">
+    <div v-if="isInitialLoading || isFetchingMore">
       <ProgressBar />
-      <p>Loading more...</p>
+      <p>Loading...</p>
     </div>
+
   </div>
 </template>
 

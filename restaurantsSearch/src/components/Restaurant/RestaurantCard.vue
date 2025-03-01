@@ -61,12 +61,13 @@ defineProps<{ restaurant: Restaurant }>();
   list-style: none;
   padding: 0;
   margin: 0;
+  border-radius: 4px;
   gap: 5px;
 }
 
 .recommendation-item {
   width: 100px;
-  background-color: #f8f8f8;
+  background-color: transparent;
   border-radius: 4px;
   padding: 5px;
   margin: 10px;
@@ -78,6 +79,7 @@ defineProps<{ restaurant: Restaurant }>();
 @media (max-width: 768px) {
   .restaurant-details {
     flex-direction: column;
+    align-items: center;
   }
 
   .restaurant-card {
