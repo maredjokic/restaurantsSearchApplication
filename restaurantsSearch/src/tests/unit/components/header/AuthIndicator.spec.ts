@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import AuthIndicator from '@/components/Header/AuthIndicator.vue';
-import ProgressBar from '@/components/Loader/ProgressBar.vue';
+import AuthIndicator from '@/components/header/AuthIndicator.vue';
+import ProgressBar from '@/components/loader/ProgressBar.vue';
 import { useAuthStore } from '@/stores/authStore';
 import { createPinia } from 'pinia';
 

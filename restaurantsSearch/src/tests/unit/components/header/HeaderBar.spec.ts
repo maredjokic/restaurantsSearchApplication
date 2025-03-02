@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils';
 import { describe, it, expect } from 'vitest';
-import HeaderBar from '@/components/Header/HeaderBar.vue';
-import AuthIndicator from '@/components/Header/AuthIndicator.vue';
+import HeaderBar from '@/components/header/HeaderBar.vue';
+import AuthIndicator from '@/components/header/AuthIndicator.vue';
 import { createPinia } from 'pinia';
 
 export const piniaInstance = createPinia();
