@@ -28,5 +28,5 @@ export const useAuthStore = defineStore('auth', {
       }
     },
   },
-  // TODO: Refresh token action
+  // TODO: Refresh token, token expiration, etc.
 });

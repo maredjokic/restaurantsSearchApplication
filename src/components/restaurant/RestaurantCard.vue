@@ -11,8 +11,8 @@ defineProps<{ restaurant: Restaurant }>();
   <div class="restaurant-card">
     <div class="restaurant-details">
       <div>
-        <h3 class="restaurant-name">{{ restaurant.name }}</h3>
-        <h6 class="restaurant-score">Score: ({{ restaurant.score.toFixed(2) }})</h6>
+        <div class="restaurant-name">{{ restaurant.name }}</div>
+        <div class="restaurant-score">Score: ({{ restaurant.score.toFixed(2) }})</div>
       </div>
       <ul class="recommendations">
         <button :title="rec.text" v-for="rec in restaurant.recommended" :key="restaurant.name + rec.text + rec.time"
@@ -43,6 +43,7 @@ defineProps<{ restaurant: Restaurant }>();
   flex-direction: row;
   justify-content: space-between;
   padding: 15px;
+  animation: fadeIn 1.5s ease-out;
 }
 
 .restaurant-name {
@@ -100,5 +101,16 @@ defineProps<{ restaurant: Restaurant }>();
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.2;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>

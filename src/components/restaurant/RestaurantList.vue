@@ -29,7 +29,6 @@ const isInitialState = computed(() => searchStore.searchId === null && searchSto
       <ProgressBar />
       <p>Loading...</p>
     </div>
-
   </div>
 </template>
 

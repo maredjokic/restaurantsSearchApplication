@@ -19,13 +19,13 @@ const handleSearch = async () => {
 </script>
 
 <template>
-  <div class="search-form">
-    <GuestSelector v-model="selectedSize" />
-    <DateSelector v-model="selectedDate" />
-    <TimeSelector v-model="selectedTime" />
-    <SearchButton :onClick="handleSearch" :loading="searchStore.loading" />
-    <p v-if="error">{{ error }}</p>
-  </div>
+    <div class="search-form">
+      <GuestSelector v-model="selectedSize" />
+      <DateSelector v-model="selectedDate" />
+      <TimeSelector v-model="selectedTime" />
+      <SearchButton :onClick="handleSearch" :loading="searchStore.loading" />
+      <p v-if="error">{{ error }}</p>
+    </div>
 </template>
 
 <style scoped>

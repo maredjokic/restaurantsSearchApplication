@@ -13,3 +13,7 @@ const selectedDate = defineModel<string | null>();
     </option>
   </select>
 </template>
+
+<style scoped>
+</style>
+

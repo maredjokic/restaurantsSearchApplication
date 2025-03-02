@@ -13,11 +13,4 @@ const selectedSize = defineModel<number | null>();
 </template>
 
 <style scoped>
-select {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 150px;
-}
 </style>
