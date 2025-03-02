@@ -1,5 +1,11 @@
 # Restaurants Search
 
+Vue 3, Pinia, Vue Router
+
+Vitest, Responsive app
+
+css-style not well refactored
+
 ## Project Setup
 
 ```sh
