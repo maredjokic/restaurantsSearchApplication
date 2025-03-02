@@ -9,9 +9,9 @@ import { useSearchStore } from '@/stores/searchStore';
 
 const searchStore = useSearchStore();
 const { searchRestaurants, error } = useSearch();
-const selectedSize = ref<number | null>(null);
-const selectedDate = ref<string | null>(null);
-const selectedTime = ref<string | null>(null);
+const selectedSize = ref<number | null | undefined>(null);
+const selectedDate = ref<string | null | undefined>(null);
+const selectedTime = ref<string | null | undefined>(null);
 
 const handleSearch = async () => {
   searchRestaurants(selectedDate.value, selectedTime.value, selectedSize.value);

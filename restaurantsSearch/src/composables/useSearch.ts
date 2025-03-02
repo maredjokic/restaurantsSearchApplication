@@ -6,9 +6,9 @@ export function useSearch() {
   const errorMessage = ref<string | null>(null);
 
   const searchRestaurants = async (
-    date: string | null,
-    time: string | null,
-    size: number | null,
+    date: string | null | undefined,
+    time: string | null | undefined,
+    size: number | null | undefined,
   ) => {
     if (!date || !time || !size) {
       errorMessage.value = 'Please fill in all fields!';
