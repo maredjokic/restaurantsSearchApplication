@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import RestaurantList from '@/components/Restaurant/RestaurantList.vue';
-import RestaurantCard from '@/components/Restaurant/RestaurantCard.vue';
-import ProgressBar from '@/components/Loader/ProgressBar.vue';
+import RestaurantList from '@/components/restaurant/RestaurantList.vue';
+import RestaurantCard from '@/components/restaurant/RestaurantCard.vue';
+import ProgressBar from '@/components/loader/ProgressBar.vue';
 import { useSearchStore } from '@/stores/searchStore';
 import type { Restaurant } from '@/types/restaurant';
 

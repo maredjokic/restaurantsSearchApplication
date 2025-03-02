@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils';
 import { describe, it, expect, vi } from 'vitest';
-import TimeSelector from '@/components/Search/TimeSelector.vue';
+import TimeSelector from '@/components/search/TimeSelector.vue';
 
 // Mock the useTimeOptions composable
 vi.mock('@/composables/useTimeOptions', () => {
@@ -28,6 +28,6 @@ describe('TimeSelect Component', () => {
     const select = wrapper.find('select');
     await select.setValue('18:30');
 
-    expect(wrapper.emitted('update:modelValue')![0]).toEqual(['18:30']);
+    expect(wrapper.emitted('update:modelValue')![0]).toEqual(['18:30']); //quick fix
   });
 });

@@ -2,7 +2,7 @@
 import { RouterView } from 'vue-router'
 import { onMounted } from "vue";
 import { useAuthStore } from "@/stores/authStore";
-import HeaderBar from "@/components/Header/HeaderBar.vue";
+import HeaderBar from "@/components/header/HeaderBar.vue";
 
 const authStore = useAuthStore();
 

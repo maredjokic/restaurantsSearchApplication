@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { mount } from '@vue/test-utils';
-import RestaurantCard from '@/components/Restaurant/RestaurantCard.vue';
+import RestaurantCard from '@/components/restaurant/RestaurantCard.vue';
 import { formatTimeStringAddColon } from '@/composables/formatTimeString';
 import type { Restaurant } from '@/types/restaurant';
 

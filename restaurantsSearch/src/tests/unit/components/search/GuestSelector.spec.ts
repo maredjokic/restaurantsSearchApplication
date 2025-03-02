@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils';
 import { describe, it, expect } from 'vitest';
-import GuestSelector from '@/components/Search/GuestSelector.vue';
+import GuestSelector from '@/components/search/GuestSelector.vue';
 
 describe('GuestSelector.vue', () => {
   it('should render the select element', () => {

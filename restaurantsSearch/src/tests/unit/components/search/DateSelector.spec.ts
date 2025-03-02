@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils';
 import { describe, it, expect, vi } from 'vitest';
-import DateSelector from '@/components/Search/DateSelector.vue';
+import DateSelector from '@/components/search/DateSelector.vue';
 
 vi.mock('@/composables/useDateOptions', () => {
   return {

@@ -1,10 +1,10 @@
 import { mount } from '@vue/test-utils';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import SearchForm from '@/components/Search/SearchForm.vue';
-import GuestSelector from '@/components/Search/GuestSelector.vue';
-import DateSelector from '@/components/Search/DateSelector.vue';
-import TimeSelector from '@/components/Search/TimeSelector.vue';
-import SearchButton from '@/components/Search/SearchButton.vue';
+import SearchForm from '@/components/search/SearchForm.vue';
+import GuestSelector from '@/components/search/GuestSelector.vue';
+import DateSelector from '@/components/search/DateSelector.vue';
+import TimeSelector from '@/components/search/TimeSelector.vue';
+import SearchButton from '@/components/search/SearchButton.vue';
 
 vi.mock('@/stores/searchStore', () => {
   return {

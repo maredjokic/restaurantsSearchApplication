@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useSearchStore } from "@/stores/searchStore";
-import RestaurantCard from "@/components/Restaurant/RestaurantCard.vue";
-import ProgressBar from "@/components/Loader/ProgressBar.vue";
+import RestaurantCard from "@/components/restaurant/RestaurantCard.vue";
+import ProgressBar from "@/components/loader/ProgressBar.vue";
 
 const searchStore = useSearchStore();
 

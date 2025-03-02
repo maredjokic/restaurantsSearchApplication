@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils';
 import { describe, it, expect, vi } from 'vitest';
-import SearchButton from '@/components/Search/SearchButton.vue';
+import SearchButton from '@/components/search/SearchButton.vue';
 
 describe('LoadingButton Component', () => {
   it('renders correctly', () => {

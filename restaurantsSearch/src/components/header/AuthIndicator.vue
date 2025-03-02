@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useAuthStore } from '@/stores/authStore';
-import ProgressBar from "@/components/Loader/ProgressBar.vue";
+import ProgressBar from "@/components/loader/ProgressBar.vue";
 
 const authStore = useAuthStore();
 </script>
