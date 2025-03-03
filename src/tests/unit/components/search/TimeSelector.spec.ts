@@ -2,7 +2,6 @@ import { mount } from '@vue/test-utils';
 import { describe, it, expect, vi } from 'vitest';
 import TimeSelector from '@/components/search/TimeSelector.vue';
 
-// Mock the useTimeOptions composable
 vi.mock('@/composables/useTimeOptions', () => {
   return {
     useTimeOptions: vi.fn().mockReturnValue({

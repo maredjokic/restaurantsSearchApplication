@@ -15,7 +15,7 @@ describe('DateSelect Component', () => {
     const wrapper = mount(DateSelector);
 
     const options = wrapper.findAll('option');
-    expect(options.length).toBe(4); // Includes the default "Date" option
+    expect(options.length).toBe(4);
     expect(options[1].text()).toBe('2023-03-02');
     expect(options[2].text()).toBe('2023-03-03');
     expect(options[3].text()).toBe('2023-03-04');

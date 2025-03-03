@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { mount } from '@vue/test-utils';
 import { formatTimeStringAddColon } from '@/composables/formatTimeString';
-import RecommendationsList from '@/components/restaurant/RecommendationsList.vue'; // prilagodite putanju
+import RecommendationsList from '@/components/restaurant/RecommendationsList.vue';
 
 const recommendations = [
   { text: 'Recommendation 1', time: '1200' },

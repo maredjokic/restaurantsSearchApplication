@@ -7,7 +7,6 @@ import { createPinia } from 'pinia';
 
 export const piniaInstance = createPinia();
 
-// Mock the useAuthStore composable
 vi.mock('@/stores/authStore', () => {
   return {
     useAuthStore: vi.fn().mockReturnValue({
