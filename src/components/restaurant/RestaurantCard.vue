@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineProps } from 'vue';
 import type { Restaurant } from '@/types/restaurant';
 import RestaurantDetails from '@/components/restaurant/RestaurantDetails.vue';
 import RecommendationsList from '@/components/restaurant/RecommendationsList.vue';

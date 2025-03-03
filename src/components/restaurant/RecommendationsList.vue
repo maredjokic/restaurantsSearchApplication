@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import { defineProps } from 'vue';
 import { formatTimeStringAddColon } from '@/composables/formatTimeString';
 
 defineProps<{ recommendations: { text: string; time: string }[] }>();
 </script>
 
 <template>
-  <ul class="recommendations">
+  <div class="recommendations">
     <button
       :title="rec.text"
       v-for="rec in recommendations"
@@ -14,7 +13,7 @@ defineProps<{ recommendations: { text: string; time: string }[] }>();
       class="recommendation-item">
       {{ formatTimeStringAddColon(rec.time) }} - {{ rec.text }}
     </button>
-  </ul>
+  </div>
 </template>
 
 <style scoped>

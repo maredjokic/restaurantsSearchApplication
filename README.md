@@ -4,8 +4,6 @@ Vue 3, Pinia, Vue Router, Vitest, Responsive app
 
 css-style not well refactored
 
-Project can have a more branched folder structure, but this is ok for the size of the project. Lots of tests written.
-
 ## Project Setup
 
 ```sh
