@@ -2,7 +2,7 @@
 
 Vue 3, Pinia, Vue Router, Vitest, Responsive app
 
-css-style not well refactored
+css-style not well refactored, part of the tests written
 
 ## Project Setup
 
