@@ -23,21 +23,4 @@
   left: -30%;
   animation: indeterminate 1.5s infinite ease-in-out;
 }
-
-@keyframes indeterminate {
-  0% {
-    left: -30%;
-    width: 30%;
-  }
-
-  50% {
-    left: 40%;
-    width: 50%;
-  }
-
-  100% {
-    left: 100%;
-    width: 30%;
-  }
-}
 </style>
